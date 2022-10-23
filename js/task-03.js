@@ -12,34 +12,15 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-// const option = images[0];
-  const listOfImagesEl = document.querySelector('.gallery');
-console.log(listOfImagesEl);
-const elements = images.map(({url, alt}) =>{
-  const itemOfList = listOfImagesEl.insertAdjacentHTML("afterbegin",`<li><img src = `${url}`, alt = `${alt}`></li>`);
+const listEl=document.querySelector(".gallery")
+console.log(listEl);
+const markup = images.map(({
+  url,
+  alt
+}) =>
+  `<li>
+  <img src="${url}" alt="${alt}" class="image-gallery">
+  </li>`).join('');
+  console.log(markup);
 
-  return itemOfList;
-
-})
-
-// const makeListOfImages = images => {
-//   return images.map(option =>{
-//     const itemOfList = listOfImagesEl.insertAdjacentHTML("afterbegin",'<li></li>');
-//     const imageInItem = document.createElement("<img>")
-//     imageInItem.url = option.url;
-//     imageInItem.alt = option.alt;
-
-//     return itemOfList;
-// })
-// }
-// const elements = makeListOfImages(images);
-
-// const listEl=document.querySelector(".gallery")
-// console.log(listEl);
-// const markup = images.map(({
-//   url,
-//   alt
-// }) =>
-//   `<li>
-//   <img src="${url}" alt="${alt}" class="image-gallery">
-//   </li>`).join('');
+listEl.insertAdjacentHTML('beforeend', markup);
