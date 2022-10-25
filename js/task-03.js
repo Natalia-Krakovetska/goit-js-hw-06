@@ -19,8 +19,25 @@ const markup = images.map(({
   alt
 }) =>
   `<li>
-  <img src="${url}" alt="${alt}" class="image-gallery">
+  <img src="${url}" alt="${alt}" class="image-gallery" >
   </li>`).join('');
   console.log(markup);
 
+
+listEl.style.listStyle = 'none';
+listEl.style.display = 'flex';
+listEl.style.justifyContent = 'center';
+listEl.style.alignItems = 'center';
+
+listEl.style.gap = '10px';
+
 listEl.insertAdjacentHTML('beforeend', markup);
+
+const itemsEl = document.querySelectorAll('li');
+console.log(itemsEl);
+itemsEl.forEach(item => item.style.width = '300px');
+console.log(itemsEl);
+const imagesEl = document.querySelectorAll('.image-gallery');
+console.log(imagesEl);
+imagesEl.forEach(image => image.style.width = '100%');
+console.log(imagesEl);
