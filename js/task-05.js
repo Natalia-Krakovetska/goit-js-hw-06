@@ -10,5 +10,4 @@ function onInputChange(event){
         refs.nameLabel.textContent = 'Anonymous';             
     }      
     refs.nameLabel.textContent = event.currentTarget.value;
-   }
-   
+   }   
