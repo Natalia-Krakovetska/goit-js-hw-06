@@ -8,13 +8,8 @@ function onInputBlur(){
     {
         inputTextEl.classList.add('valid');
         inputTextEl.classList.remove('invalid');
-    }else if(inputTextEl.value.length < Number(inputTextEl.getAttribute('data-length')) && (inputTextEl.value.length > 0))
-    {
+    }else {
         inputTextEl.classList.add('invalid');
         inputTextEl.classList.remove('valid');
-    } else {
-        inputTextEl.classList.remove('invalid');
-        inputTextEl.classList.remove('valid');
     }
-
 }
