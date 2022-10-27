@@ -3,11 +3,11 @@ let refs = {
     nameLabel: document.querySelector('#name-output'),
 }
 
-refs.input.addEventListener('input', onInputChange);
+refs.input.addEventListener('input', onInputChange)
 
-function onInputChange(event){      
-    if(!event.currentTarget.value.length){
-        refs.nameLabel.textContent = 'Anonymous';             
-    }      
+function onInputChange(event){   
     refs.nameLabel.textContent = event.currentTarget.value;
+    if(!refs.input.value.length) {    
+    refs.nameLabel.textContent = 'Anonymous';  
+    }       
    }   
